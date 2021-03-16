@@ -1,28 +1,53 @@
-<div class="stack-main" *ngFor="let main_stack of main_stacks">
-	<h2 class="stack-name">{{main_stack.name | uppercase}}</h2>
-	<div *ngFor="let sub_stacks of main_stack.children">
-        <div class="stack-server-btn" (click)="collapse()">
-            <h3>{{sub_stacks.name}}</h3>
-        </div>
-        <span *ngFor="let servers of sub_stacks.children">
-            <div class="server-type">
-                <span class="server-type-wrap">
-                    <h4 class="server-name">{{servers.name}}</h4>                    
-                    <div class="expanded" *ngFor="let server of servers.children">
-                        <h5>
-                            {{server.name}}
-                            <span *ngIf="server.startButton==='enabled'">(Offline)</span>
-                            <span *ngIf="server.stopButton==='enabled'">(Online)</span>
-                        </h5>
-                        <div class="server-button">
-                            <button class="btn btn-success" (click)="updateStartButton(server)" [disabled]="server.startButton === 'disabled'">start</button>
-                            <button class="btn btn-danger" (click)="updateStopButton(server)" [disabled]="server.stopButton === 'disabled'">stop</button>
-                        </div>
+<!-- Progress spinner while API gets loaded -->
+<app-dashboard-loader [apiLoadedStatus]='apiLoadedStatus'></app-dashboard-loader>
+
+<!-- Dashboard to display server details -->
+
+<mat-sidenav-container *ngIf="!apiLoadedStatus">
+    <mat-sidenav>Servers sidenav</mat-sidenav>
+    <mat-sidenav-content>
+        <div class="stack-main" *ngFor="let main_stack of main_stacks">
+            <h2 class="stack-name">{{main_stack.name | uppercase}}</h2>
+            <div *ngFor="let sub_stacks of main_stack.children">
+                <div class="stack-server-btn" (click)="collapse()">
+                    <h3>{{sub_stacks.name}}</h3>
+                </div>
+                <span *ngFor="let servers of sub_stacks.children">
+                    <div class="server-type">
+                        <span class="server-type-wrap">
+                            <h4 class="server-name">{{servers.name}}</h4>                    
+                            <div class="expanded" *ngFor="let server of servers.children">
+                                <h5>
+                                    {{server.name}}
+                                    <span *ngIf="server.startButton==='enabled'">(Offline)</span>
+                                    <span *ngIf="server.stopButton==='enabled'">(Online)</span>
+                                </h5>
+                                <div class="server-button">
+                                    <button mat-raised-button
+                                            matTooltip="Click to start the server"
+                                            class="btn-start"
+                                            (click)="updateStartButton(server)"
+                                            [disabled]="server.startButton === 'disabled'"
+                                    >
+                                            start
+                                    </button>
+                                    <button mat-raised-button
+                                            matTooltip="Click to stop the server"
+                                            class="btn-stop" 
+                                            (click)="updateStopButton(server)" 
+                                            [disabled]="server.stopButton === 'disabled'"
+                                            color="warn"
+                                    >
+                                            stop
+                                    </button>
+                                </div>
+                            </div>
+                        </span>
                     </div>
+                    <br>
                 </span>
             </div>
-            <br>
-        </span>
-    </div>
-	<hr>
-</div>
+            <hr>
+        </div>        
+    </mat-sidenav-content>
+</mat-sidenav-container>

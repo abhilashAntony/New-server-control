@@ -11,12 +11,15 @@ export class DashboardComponent implements OnInit {
   
   main_stacks;
   status;
+  apiLoadedStatus: Boolean;
   constructor(private configService: ConfigService) { }
 
   ngOnInit(): void {
+    this.apiLoadedStatus = true;
     this.configService
     .getConfig()
     .subscribe((data: any) => {
+      this.apiLoadedStatus = false;
       this.main_stacks = data;
     });
   }
