@@ -8,12 +8,11 @@ import { ConfigService } from "../config.service";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  
   main_stacks;
-  status;
   apiLoadedStatus: Boolean;
   constructor(private configService: ConfigService) { }
 
+  // Initializing the stack data from API call
   ngOnInit(): void {
     this.apiLoadedStatus = true;
     this.configService
@@ -24,6 +23,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  // Controls the functionality of the start button
   updateStartButton(server) {
     if (server.startButton == "enabled") {
       server.startButton = "disabled";
@@ -35,6 +35,7 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  // Controls the functionality of the stop button
   updateStopButton(server) {
     if (server.stopButton == "enabled") {
       server.stopButton = "disabled";
