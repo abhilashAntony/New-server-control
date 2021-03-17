@@ -9,12 +9,14 @@ import { ConfigService } from "./config.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { DashboardLoaderComponent } from './dashboard/dashboard-loader/dashboard-loader.component';
+import { ServerComponentComponent } from './dashboard/server-component/server-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    DashboardLoaderComponent
+    DashboardLoaderComponent,
+    ServerComponentComponent
   ],
   imports: [
     BrowserModule,

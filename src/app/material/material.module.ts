@@ -5,6 +5,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const MaterialComponents = [
   MatProgressSpinnerModule,
@@ -12,7 +15,10 @@ const MaterialComponents = [
   MatTooltipModule,
   MatToolbarModule,
   MatIconModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatTabsModule,
+  MatDividerModule,
+  MatExpansionModule
 ]
 
 @NgModule({
