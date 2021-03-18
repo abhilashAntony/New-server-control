@@ -1,6 +1,10 @@
 # ServerControl
 
-An updated version of the previously submitted server-control demo app. This version is updated with angular material components.
+An updated version of the previously submitted server-control demo app. The current version now includes angular material components.
+
+## Installation
+
+Download the code into local machine.
 
 ## Development server
 
