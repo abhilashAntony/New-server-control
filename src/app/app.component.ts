@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // Variables referencing title and the toggle status of drawer
   title = 'Server Control Dashboard';
-  openDrawer = true;
+  openDrawer = false;
 
   // Function changes isOpen property to toggle drawer component
   toggleDrawer(): void {

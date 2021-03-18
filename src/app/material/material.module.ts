@@ -9,6 +9,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 
+// Contains an array of the imported Material modules
 const MaterialComponents = [
   MatProgressSpinnerModule,
   MatButtonModule,
