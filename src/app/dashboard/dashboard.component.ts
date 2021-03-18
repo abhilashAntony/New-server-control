@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, ViewChild, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnChanges } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { ConfigService } from '../config.service';
 
@@ -13,8 +13,9 @@ export class DashboardComponent implements OnInit, OnChanges {
   mainStacks: any;
   apiLoadedStatus: boolean;
 
-  // ViewChild obtains access to the mat-drawer element
+  // ViewChild obtains access to the DOM element referenced by id 'drawer'
   @ViewChild('drawer', {static: false}) public drawer: MatDrawer;
+  // Interact with parent app-component
   @Input() openDrawer: boolean;
   constructor(private configService: ConfigService) { }
 

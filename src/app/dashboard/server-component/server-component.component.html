@@ -3,11 +3,11 @@
 <div *ngFor="let mainStack of mainStacks">
     
     <!-- Titles of the main stacks in uppercase (STACK 1 AND STACK 2) -->
-    <div class="mat-subheading-1">{{ mainStack.name|uppercase }}</div>
+    <div class="mat-subheading-1">{{ mainStack.name | uppercase }}</div>
     
     <!-- Individual servers inside main stack (Old Stack, New Gen Stack)-->
     <div class="sub-stack" *ngFor="let subStacks of mainStack.children">
-        <div class="mat-subheading-1">{{ subStacks.name|uppercase }}</div>
+        <div class="mat-subheading-1">{{ subStacks.name | uppercase }}</div>
         
         <!-- Type of server (Backend, Frontend or Admin server) -->
         <span *ngFor="let servers of subStacks.children">
