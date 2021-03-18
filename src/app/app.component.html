@@ -1,5 +1,13 @@
+<!-- Toolbar showing title and button to toggle drawer -->
 <mat-toolbar color="primary">
+    <button mat-icon-button
+            (click)="toggleDrawer()">
+        <mat-icon>
+            menu
+        </mat-icon>
+    </button>
     <span class="toolbar-title">{{title | uppercase}}</span>
 </mat-toolbar>
 
-<app-dashboard></app-dashboard>
+<!-- Selector to dashboard component -->
+<app-dashboard [openDrawer]='openDrawer'></app-dashboard>

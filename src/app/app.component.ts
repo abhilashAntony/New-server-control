@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Server Control Dashboard';
+  openDrawer = true;
+
+  // Function changes isOpen property to toggle drawer component
+  toggleDrawer(): void {
+    this.openDrawer = !this.openDrawer;
+  }
 }

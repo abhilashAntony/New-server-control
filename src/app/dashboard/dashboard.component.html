@@ -4,19 +4,19 @@
 <!-- Dashboard to display server details -->
 <mat-drawer-container *ngIf="!apiLoadedStatus">
     
-    <!--drawer to display -->
-    <mat-drawer opened mode="side">
+    <!--Displays the drawer component -->
+    <mat-drawer #drawer mode="side">
         <div class="mat-title">Server status</div>
-        <app-server-component [main_stacks]="main_stacks"></app-server-component>
+        <app-server-component [mainStacks]="mainStacks"></app-server-component>
     </mat-drawer>
     
     <!-- Main server content -->
     <mat-drawer-content>
         
         <!-- *ngFor directive iterates through the main stacks -->
-        <div class="stack-main" *ngFor="let main_stack of main_stacks">
+        <div class="stack-main" *ngFor="let main_stack of mainStacks">
             
-            <!-- Name of the main stacks in uppercase (STACK 1 AND STACK 2) -->
+            <!-- Titles of the main stacks in uppercase (STACK 1 AND STACK 2) -->
             <h2 class="stack-name">{{main_stack.name | uppercase}}</h2>
             
             <!-- Individual servers inside main stack (Old Stack, New Gen Stack)-->

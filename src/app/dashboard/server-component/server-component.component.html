@@ -1,19 +1,19 @@
 <!-- *ngFor directive iterates through the main stacks -->
 <hr>
-<div *ngFor="let main_stack of main_stacks">
+<div *ngFor="let main_stack of mainStacks">
     
-    <!-- Name of the main stacks in uppercase (STACK 1 AND STACK 2) -->
-    <div class="mat-subheading-1">{{main_stack.name }}</div>
+    <!-- Titles of the main stacks in uppercase (STACK 1 AND STACK 2) -->
+    <div class="mat-subheading-1">{{ main_stack.name|uppercase }}</div>
     
     <!-- Individual servers inside main stack (Old Stack, New Gen Stack)-->
     <div class="sub-stack" *ngFor="let sub_stacks of main_stack.children">
-        <div class="mat-subheading-1">{{sub_stacks.name}}</div>
+        <div class="mat-subheading-1">{{ sub_stacks.name|uppercase }}</div>
         
         <!-- Type of server (Backend, Frontend or Admin server) -->
         <span *ngFor="let servers of sub_stacks.children">
             <div class="server-type">
                 <span class="server-type-wrap">
-                    <div class="mat-body-1">{{servers.name}}</div>                    
+                    <div class="mat-body-1">{{ servers.name }}</div>                    
                     
                     <!-- Server and status -->
                     <ul class="expanded" *ngFor="let server of servers.children">

@@ -19,7 +19,7 @@ const MaterialComponents = [
   MatTabsModule,
   MatDividerModule,
   MatExpansionModule
-]
+];
 
 @NgModule({
   imports: [MaterialComponents],

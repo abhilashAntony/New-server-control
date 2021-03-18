@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./server-component.component.css']
 })
 export class ServerComponentComponent implements OnInit {
-  @Input() main_stacks;
+  @Input() mainStacks;
   constructor() { }
 
   ngOnInit(): void {
