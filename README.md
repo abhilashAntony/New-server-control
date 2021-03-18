@@ -2,7 +2,7 @@
 
 ## Introduction
 
-An updated version of the previously submitted server-control demo app. The current version now includes angular material components.
+An updated version of the previously submitted server-control demo app. The current version now includes Angular Material components.
 
 ## Installation
 
